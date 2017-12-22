@@ -1,0 +1,38 @@
+[package]
+name = "redisy"
+version = "0.1.0"
+authors = ["Ryan Barth <ryan@barth.tech>"]
+
+[features]
+default = ["postgres"]
+postgres = []
+
+[dependencies]
+# NOTE: These dependencies reference a file due to the fact that we want to use
+# the middleware which, in its current state, references a dependency on gotham
+# that is in a relative directory. We also want to use the new future error
+# unwinding from gotham's master branch
+#gotham = { git = "https://github.com/gotham-rs/gotham.git" }
+#gotham_derive = { git = "https://github.com/gotham-rs/gotham.git" }
+#gotham_middleware_diesel = { git = "https://code.barth.tech/ryan/gotham_middlewre_diesel.git" }
+rocket = "0.3.3"
+rocket_codegen = "0.3.3"
+diesel = { version = "*", features = ["sqlite", "postgres", "large-tables", "chrono"] }
+diesel_codegen = { version = "*", features = ["sqlite", "postgres"] }
+r2d2 = "*"
+r2d2-diesel = "*"
+r2d2_redis = "*"
+reqwest = "*"
+dotenv = "*"
+fern = "*"
+chrono = { version = "*", features = ["serde"] }
+rocket_contrib = "*"
+serde = "*"
+serde_json = "*"
+serde_derive = "*"
+redis = "*"
+argon2rs = "*"
+rand = "*"
+base64 = "*"
+rmp = "*"
+rmp-serde = "*"
