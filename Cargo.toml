@@ -1,5 +1,5 @@
 [package]
-name = "redisy"
+name = "rudis"
 version = "0.1.0"
 authors = ["Ryan Barth <ryan@barth.tech>"]
 
